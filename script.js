@@ -9,6 +9,7 @@ let audio = new Audio()
 
 pianoKeys.forEach((key) => {
     allKeys.push(key.dataset.key)
+    audio.pause()
   key.addEventListener("click", () => playTune(key.dataset.key));
 });
 
@@ -39,6 +40,7 @@ function playTune(key) {
 }
 
 function pressedKey(e) {
+    audio.pause()
     allKeys.includes(e.key) && playTune(e.key)
 }
 
