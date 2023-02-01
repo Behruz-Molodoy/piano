@@ -14,8 +14,9 @@ pianoKeys.forEach((key) => {
   key.addEventListener("click", () => playTune(key.dataset.key));
 });
 
+// cashe all sounds
+
 let requests = [].concat(allKeys).map(key => fetch(`https://piano-virid.vercel.app/audios/${key}.mp3`));
-console.log(requests);
 Promise.all(requests)
 
 // Events
