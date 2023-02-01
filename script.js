@@ -57,13 +57,13 @@ function showHideKeys() {
 
 // others
 
-if (!sessionStorage.getItem("sizes")) {
+if (!localStorage.getItem("sizes")) {
   let h = window.innerHeight,
     w = window.innerWidth;
-  sessionStorage.setItem("sizes", JSON.stringify({h,w}))
+  localStorage.setItem("sizes", JSON.stringify({h,w}))
 }
 
-let sizes = JSON.parse(sessionStorage.getItem("sizes"))
+let sizes = JSON.parse(localStorage.getItem("sizes"))
 
 window.onresize = function () {
   if (sizes.h != window.innerHeight || sizes.w != window.innerWidth) {
