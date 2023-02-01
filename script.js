@@ -22,7 +22,7 @@ document.addEventListener("keydown" , pressedKey)
 
 function playTune(key) {
     if(!audio.src){
-        audio.src= "./audios/" + key
+        audio.src= "audios/" + key + ".mp3"
         console.log(key);
     }
 
