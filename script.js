@@ -65,6 +65,10 @@ if (!localStorage.getItem("sizes")) {
 
 let sizes = JSON.parse(localStorage.getItem("sizes"))
 
+console.log(sizes);
+console.log(sizes.h != window.innerHeight , window.innerHeight);
+console.log(sizes.w != window.innerWidth , window.innerWidth);
+
 window.onresize = function () {
   if (sizes.h != window.innerHeight || sizes.w != window.innerWidth) {
     window.location.href =
