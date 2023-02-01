@@ -8,10 +8,16 @@ let allKeys = [];
 let audio = new Audio();
 audio.playbackRate = 0.5;
 
+// https://piano-virid.vercel.app/audios/a.mp3
+
+let requests = pianoKeys.map(key => fetch(`https://piano-virid.vercel.app/audios/${key}.mp3`));
+
+Promise.all(requests)
+
+
 pianoKeys.forEach((key) => {
   allKeys.push(key.dataset.key);
   audio.pause();
-  audio.src = "audios/" + key + ".mp3";
   key.addEventListener("click", () => playTune(key.dataset.key));
 });
 
