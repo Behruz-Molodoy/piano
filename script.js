@@ -60,16 +60,23 @@ function showHideKeys() {
 if (!localStorage.getItem("sizes")) {
   let h = window.innerHeight,
     w = window.innerWidth;
-  localStorage.setItem("sizes", JSON.stringify({h,w}))
+  localStorage.setItem("sizes", JSON.stringify({ h, w }));
 }
 
-let sizes = JSON.parse(localStorage.getItem("sizes"))
+let sizes = JSON.parse(localStorage.getItem("sizes"));
 
 console.log(sizes);
-console.log(sizes.h != window.innerHeight , window.innerHeight);
-console.log(sizes.w != window.innerWidth , window.innerWidth);
+console.log(sizes.h != window.innerHeight, window.innerHeight);
+console.log(sizes.w != window.innerWidth, window.innerWidth);
 
 window.onresize = function () {
+  if (sizes.h != window.innerHeight || sizes.w != window.innerWidth) {
+    window.location.href =
+      "https://i.pinimg.com/originals/a1/9f/09/a19f09386c8bf4a5ba48d07a7b4171f2.gif";
+  }
+};
+
+window.onload = function () {
   if (sizes.h != window.innerHeight || sizes.w != window.innerWidth) {
     window.location.href =
       "https://i.pinimg.com/originals/a1/9f/09/a19f09386c8bf4a5ba48d07a7b4171f2.gif";
