@@ -6,6 +6,7 @@ const keysCheckbox = document.querySelector(".keys-checkbox input");
 // Variables
 let allKeys = []
 let audio = new Audio()
+audio.playbackRate = 0.5
 
 pianoKeys.forEach((key) => {
     allKeys.push(key.dataset.key)
