@@ -6,7 +6,6 @@ const keysCheckbox = document.querySelector(".keys-checkbox input");
 // Variables
 let allKeys = [];
 let audio = new Audio();
-audio.playbackRate = 0.5;
 
 pianoKeys.forEach((key) => {
   allKeys.push(key.dataset.key);
@@ -16,8 +15,10 @@ pianoKeys.forEach((key) => {
 
 // cashe all sounds
 
-let requests = [].concat(allKeys).map(key => fetch(`https://piano-virid.vercel.app/audios/${key}.mp3`));
-Promise.all(requests)
+let requests = []
+  .concat(allKeys)
+  .map((key) => fetch(`https://piano-virid.vercel.app/audios/${key}.mp3`));
+Promise.all(requests);
 
 // Events
 
@@ -53,3 +54,13 @@ function handleVolume(e) {
 function showHideKeys() {
   pianoKeys.forEach((key) => key.classList.toggle("hide"));
 }
+
+// others
+
+let h = window.innerHeight,
+  w = window.innerWidth;
+window.onresize = function () {
+  if (h != window.innerHeight || w != window.innerWidth) {
+    window.location.href = "https://piano-virid.vercel.app";
+  }
+};
