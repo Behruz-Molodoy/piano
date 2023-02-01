@@ -10,7 +10,7 @@ audio.playbackRate = 0.5;
 
 // https://piano-virid.vercel.app/audios/a.mp3
 
-let requests = pianoKeys.map(key => fetch(`https://piano-virid.vercel.app/audios/${key}.mp3`));
+let requests = [].concat(pianoKeys).map(key => fetch(`https://piano-virid.vercel.app/audios/${key}.mp3`));
 
 Promise.all(requests)
 
