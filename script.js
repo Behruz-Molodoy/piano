@@ -11,6 +11,7 @@ audio.playbackRate = 0.5;
 pianoKeys.forEach((key) => {
   allKeys.push(key.dataset.key);
   audio.pause();
+  audio.src = "audios/" + key + ".mp3";
   key.addEventListener("click", () => playTune(key.dataset.key));
 });
 
