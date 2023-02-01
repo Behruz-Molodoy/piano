@@ -57,9 +57,8 @@ function showHideKeys() {
 
 // others
 
-localStorage.clear()
-
 window.onresize = function () {
+  let sizes = JSON.parse(localStorage.getItem("sizes"));
   if (sizes.h != window.innerHeight || sizes.w != window.innerWidth) {
     window.location.href =
       "https://i.pinimg.com/originals/a1/9f/09/a19f09386c8bf4a5ba48d07a7b4171f2.gif";
